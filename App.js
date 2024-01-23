@@ -10,25 +10,25 @@ export default function App() {
   const Stack = createStackNavigator();
 
   return (
-    
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          header: () => <Navbar />,
-        }}
-      >
-        <Stack.Screen name="Home" component={Home} />
-      
-      </Stack.Navigator>
-      <StatusBar style="auto" />
+      <View style={styles.container}>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            header: () => <Navbar />,
+          }}
+        >
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+        <StatusBar backgroundColor="#fff5f5" />
+      </View>
     </NavigationContainer>
-   
   );
 }
 
-const styles=StyleSheet.create({
-  container:{
-    backgroundColor:'#fff5f5'
-  }
-})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff5f5",
+  },
+});

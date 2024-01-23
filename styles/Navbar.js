@@ -13,12 +13,15 @@ export const navbar = StyleSheet.create({
     fontStyle: 'italic',
   },
   container: {
-    height: 100,
-    width: '100%', // Adjusted from 'full'
+    height: 250,
+    width: '100%', 
+    backgroundColor:"#fff5f5",
     marginTop: Platform.OS === 'ios' ? 12 : StatusBar.currentHeight + 12,
-    marginHorizontal: 15,
+    marginHorizontal: 25,
     flex: 1,
     flexDirection: 'row',
+    justifyContent:"space-between",
+  
   },
   avatar: {
     height: 40,
@@ -27,18 +30,21 @@ export const navbar = StyleSheet.create({
     borderRadius: 7.65489,
     marginTop: 2.5,
     marginRight: 7.5,
+    marginRight:15
   },
   cart: {
     height: 40,
     width: 40,
     borderRadius: 7.65489,
-    alignItems: 'center', // Added to center content vertically
-    marginLeft:59,
+    marginRight:35
   },
   text:{
     height: 40,
-    width: 169,
+    width: 180,
     borderRadius: 7.65489,
     marginLeft:1,
+    marginLeft:45,
+    marginTop:-35,
+    backgroundColor:"#fff5f5"
   }
 });

@@ -1,30 +1,36 @@
 import React from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 import { fruits } from '../constant';
 import { cards } from '../styles/card';
 
 const CardComp = ({ title, img }) => {
   return (
     <View style={cards.card}>
-        <Image source={img} style={cards.image}/>
+      <Image source={img} style={cards.image} />
       <Text style={cards.title}>{title}</Text>
-      <TouchableOpacity style={cards.ButtonCon} onPress={() => { /* Handle button press */ }}>
-      <View style={cards.button}>
-        <Text style={cards.buttonText}>+</Text>
-      </View>
-    </TouchableOpacity>
+      <TouchableOpacity
+        style={cards.ButtonCon}
+        onPress={() => {
+          /* Handle button press */
+        }}
+      >
+        <View style={cards.button}>
+          <Text style={cards.buttonText}>+</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const Card = () => {
   return (
-    <FlatList
+    <Carousel
       data={fruits}
-      horizontal={true}
       renderItem={({ item }) => <CardComp title={item.name} img={item.image} />}
-      keyExtractor={(item) => item.id.toString()}
-      contentContainerStyle={cards.cardListContainer}
+      sliderWidth={400}
+      itemWidth={150}
+      containerCustomStyle={cards.cardListContainer}
     />
   );
 };

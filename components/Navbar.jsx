@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image,SafeAreaView } from 'react-native'
 import React from 'react'
 import { navbar } from '../styles/Navbar'
 import { name } from '../constant'
@@ -8,7 +8,8 @@ import cart from "../assets/cart.png"
 
 export default function Navbar() {
   return (
-    <View style={navbar.container}>
+    <SafeAreaView style={navbar.container}>
+       <View style={{backgroundColor:" #fff5f5"}}>
         <View style={navbar.avatar}>
         <Image
         source={avatar}
@@ -19,12 +20,13 @@ export default function Navbar() {
         <Text style={navbar.greeting}>hey {name.name}</Text>
       <Text style={navbar.Heading}>Let's get some Items</Text>
       </View>
+      </View>
       <View style={navbar.cart}>
         <Image
         source={cart}
         style={{ width: '100%', height: '100%', resizeMode: 'cover' }}
       />
         </View>
-    </View>
+    </SafeAreaView>
   )
 }

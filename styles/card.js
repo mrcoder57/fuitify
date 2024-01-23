@@ -3,7 +3,9 @@ export const cards = StyleSheet.create({
     cardListContainer: {
       paddingHorizontal: 10,
       marginHorizontal:15,
-      marginVertical:15
+      marginVertical:15,
+      height:200,
+      width:400,
     },
     card: {
       backgroundColor: '#fff',
